@@ -41,7 +41,7 @@ function wcbog2018_export_personal_data( $email_address, $page = 1 ) {
     foreach ( $posts as $post ) {
         $exported_items[] = array(
             'group_id'    => "wcbog2018-liked-entries",
-            'group_label' => __( 'Publicaciones Favoritas', 'wcbog20182018' ),
+            'group_label' => __( 'Publicaciones Favoritas', 'wcbog2018' ),
             'item_id'     => $post->ID,
             'data'        => array(
                 array(
@@ -100,7 +100,7 @@ function wcbog2018_erase_personal_data( $email_address, $page = 1 ) {
 
         $items_retained = true;
 
-        $message = __( 'Ocurrió un error intentando eliminar información personal asociada a la publicación {permalink}.', 'another-wordpress-classifieds-plugin' );
+        $message = __( 'Ocurrió un error intentando eliminar información personal asociada a la publicación {permalink}.', 'wcbog2018' );
         $message = str_replace( '{permalink}', '<a href="' . get_permalink( $post ) . '">' . esc_html( $post->post_title ) . '</a>', $message );
 
         $messages[] = $message;
