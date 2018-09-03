@@ -6,6 +6,78 @@
  * Version: 1.0.0
  */
 
+function wcbog2018_generate_button_for_post( $post_id ) {
+    if ( ! is_user_logged_in() ) {
+        return '';
+    }
+
+    $user_id = get_current_user_id();
+    $likes   = get_post_meta( $post_id, '_wcbog2018_liked_by' );
+
+    $button  = '';
+    $button .= '<span class="dashicons dashicons-heart"></span>';
+    $button .= ' ';
+
+    if ( in_array( $user_id, $likes ) ) {
+        $button .= __( 'Ya diste like a este post', 'wcbog2018' );
+    } else {
+        $button .= '<a href="' . add_query_arg( 'wcbog2018-like', '1' ) . '">' . __( 'Like', 'wcbog2018' ) . '</a>';
+    }
+
+    $button .= ' / ';
+
+    return $button;
+}
+
+function wcbog2018_generate_like_count_for_post( $post_id ) {
+    $likes = get_post_meta( $post_id, '_wcbog2018_liked_by' );
+
+    return sprintf(
+        _n(
+            'Este post tiene <b>%d</b> like',
+            'Este post tiene <b>%d</b> likes',
+            count( $likes ),
+            'wcbog2018'
+        ),
+        count( $likes )
+    );
+}
+
+function wcbog2018_add_like_box_to_content( $content ) {
+    $like_box  = '';
+    $like_box .= '<p>';
+    $like_box .= wcbog2018_generate_button_for_post( get_the_ID() );
+    $like_box .= wcbog2018_generate_like_count_for_post( get_the_ID() );
+    $like_box .= '</p>';
+
+    return $like_box . $content;
+}
+add_filter( 'the_content', 'wcbog2018_add_like_box_to_content' );
+
+
+function wcbog2018_maybe_like_post() {
+    if ( ! is_singular() ) {
+        return;
+    }
+
+    if ( ! is_user_logged_in() ) {
+        return;
+    }
+
+    if ( empty( $_GET['wcbog2018-like'] ) ) {
+        return;
+    }
+
+    $post_id = get_the_ID();
+    $user_id = get_current_user_id();
+    $likes   = get_post_meta( $post_id, '_wcbog2018_liked_by' );
+
+    if ( ! in_array( $user_id, $likes ) ) {
+        add_post_meta( $post_id, '_wcbog2018_liked_by', $user_id );
+    }
+}
+add_action( 'wp', 'wcbog2018_maybe_like_post' );
+
 add_filter( 'wp_privacy_personal_data_exporters',  'wcbog2018_register_personal_data_exporters' );
 add_filter( 'wp_privacy_personal_data_erasers', 'wcbog2018_register_personal_data_erasers' );
 
