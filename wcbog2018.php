@@ -15,7 +15,13 @@ function wcbog2018_generate_button() {
 
 function wcbog2018_generate_like_count() {
     $likes = get_post_meta( get_the_ID(), '_wcbog2018_liked_by' );
-    return 'Este post tiene <b>' . count( $likes ) . '</b> likes';
+    $no_likes = count( $likes );
+
+    if ( 1 === $no_likes ) {
+        return __( 'Este post tiene <b>1</b> like', 'wcbog2018' );
+    } else {
+        return sprintf( __( 'Este post tiene <b>%d</b> likes', 'wcbog2018' ), $no_likes );
+    }
 }
 
 function wcbog2018_add_like_box_to_content( $content ) {
