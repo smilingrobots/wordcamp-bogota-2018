@@ -13,6 +13,10 @@ function wcbog2018_generate_button() {
     return $button;
 }
 
+function wcbog2018_generate_like_count() {
+    return 'Este post tiene <b>0</b> likes';
+}
+
 function wcbog2018_add_like_box_to_content( $content ) {
     if ( ! is_singular() ) {
         return $content;
@@ -21,6 +25,8 @@ function wcbog2018_add_like_box_to_content( $content ) {
     $like_box  = '';
     $like_box .= '<p>';
     $like_box .= wcbog2018_generate_button();
+    $like_box .= ' / ';
+    $like_box .= wcbog2018_generate_like_count();
     $like_box .= '</p>';
 
     return $like_box . $content;
