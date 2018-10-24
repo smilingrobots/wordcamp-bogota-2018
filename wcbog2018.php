@@ -11,15 +11,18 @@ function wcbog2018_generate_button() {
         return '';
     }
 
+    
+
     $user_id = get_current_user_id();
     $likes   = get_post_meta( get_the_ID(), '_wcbog2018_liked_by' );
 
     $button  = '';
 
     if ( in_array( $user_id, $likes ) ) {
-        $button .= __( 'Ya diste like a este post', 'wcbog2018' );
-    } else {
-        $button .= '<a href="' . add_query_arg( 'wcbog2018-like', '1' ) . '">';        
+        $button .= '<span class="dashicons dashicons-heart" style="color: red;"></span>';
+    } else {        
+        $button .= '<span class="dashicons dashicons-heart"></span>';        
+        $button .= '<a href="' . add_query_arg( 'wcbog2018-like', '1' ) . '">';
         $button .= __( 'Like', 'wcbog2018' );
         $button .= '</a>';
     }
