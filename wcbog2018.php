@@ -7,8 +7,14 @@
  */
 
 function wcbog2018_generate_button() {
+    if ( ! is_user_logged_in() ) {
+        return '';
+    }
+
     $button  = '';
-    $button .= '<a href="' . add_query_arg( 'wcbog2018-like', '1' ) . '">Like</a>';
+    $button .= '<a href="' . add_query_arg( 'wcbog2018-like', '1' ) . '">';
+    $button .= __( 'Like', 'wcbog2018' );
+    $button .= '</a>';
 
     return $button;
 }
