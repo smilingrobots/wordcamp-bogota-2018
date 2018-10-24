@@ -33,3 +33,22 @@ function wcbog2018_add_like_box_to_content( $content ) {
     return $like_box . $content;
 }
 add_filter( 'the_content', 'wcbog2018_add_like_box_to_content' );
+
+function wcbog2018_maybe_save_like() {
+    if ( ! is_user_logged_in() ) {
+        return;
+    }
+
+    if ( empty( $_GET['wcbog2018-like'] ) ) {
+        return;
+    }    
+
+    $post_id = get_the_ID();
+    $user_id = get_current_user_id();
+    $likes   = get_post_meta( $post_id, '_wcbog2018_liked_by' );
+
+    if ( ! in_array( $user_id, $likes ) ) {
+        add_post_meta( $post_id, '_wcbog2018_liked_by', $user_id );
+    }
+}
+add_action( 'wp', 'wcbog2018_maybe_save_like' );
