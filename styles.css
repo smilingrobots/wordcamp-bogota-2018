@@ -1,0 +1,61 @@
+body {
+    font-family: helvetica, arial, sans-serif;
+    font-size: 11pt;
+    margin: 2% 5%;
+    line-height: 1.4;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 150%;
+}
+
+h2 {
+    font-size: 120%;
+}
+
+a, a:active, a:visited {
+    color: #666;
+}
+
+.tag {
+    font-size: 10px;
+    text-transform: uppercase;
+    background: #2196f3;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+
+tt {
+    background: #efefef;
+    padding: 0 5px;
+}
+
+.workshop-requirement {
+    padding: 20px;
+    background: #f6f8fa;
+    border: 1px solid #d1d5da;
+    border-radius: 4px;
+    margin: 0 0 20px 0;
+}
+
+.cols {
+    display: table;
+    width: 100%;
+}
+
+.cols .col {
+    display: table-cell;
+    width: 45%;
+}
+
+.cols .col-sep {
+    font-size: 120%;
+    font-weight: bold;
+    text-align: center;
+    width: 10%;
+}

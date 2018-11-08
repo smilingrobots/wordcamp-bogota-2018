@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>WCBOG2018 - Taller de introducción al desarrollo de plugins</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <span class="tag">WordCamp Bogotá 2018</span>
+        <h1>Taller de introdución al desarrollo de plugins</h1>
+        <p>A pocas horas del WordCamp Bogotá 2018, queremos invitarlos a verificar que cuentan en sus equipos con las herramientas que necesitaremos durante el taller para crear nuestro primer plugin de WordPress.</p>
+        <p>Necesitarán:</p>
+
+        <div class="workshop-requirement">
+            <h2>1. Un buen editor de texto</h2>
+            <p>Idealmente uno que les permita escribir código PHP y HTML cómodamente. Recomendamos <a href="https://atom.io" target="_blank">Atom</a> o <a href="https://www.sublimetext.com" target="_blank">Sublime Text</a>, ambos disponibles de manera gratuita y para todos los sistemas operativos.</p>
+        </div>
+
+        <div class="cols">
+            <div class="col">
+                <div class="workshop-requirement">
+                    <h2>2. Un entorno local de WordPress (máquina virtual)</h2>
+                    <p>Para quienes no deseen encargarse de instalar y configurar un servidor web local con WordPress, queremos ofrecerles una alternativa que les permitiría tener en su equipo una máquina virtual pre-configurada con todo lo que necesitan para asistir al taller.</p>
+                    <p>Dentro de las ventajas de la máquina virtual está el que no afectarán el software de su equipo y, una vez terminado el taller, pueden removerla sin problemas si lo desean, o seguirla utilizando para otros proyectos. También funcionaría bajo todos los sistemas operativos sin diferencias.</p>
+                    <p>Para hacer uso de esta alternativa deberán:
+                    <ol>
+                        <li>Descargar e instalar <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">VirtualBox</a></li>
+                        <li>Descargar e instalar <a href="https://www.vagrantup.com/downloads.html" target="_blank">Vagrant</a></li>
+                        <li>Descargar y descomprimir el <a href="https://github.com/smilingrobots/wordcamp-bogota-2018/files/2559590/wordcamp-bogota-2018.zip">archivo de entorno local</a> que hemos preparado, en un directorio de su preferencia.
+                            <li>Ubicarse en el directorio recién descomprimido utilizando la terminal (macOS, Linux) o la línea de comandos (Windows) y ejecutar el comando: <tt>vagrant up</tt>. Esto iniciará el proceso de configuración de la máquina virtual automáticamente.</li>
+                            <li>Acceder a tu nueva instalación de WordPress en la URL <a href="http://192.168.25.4/" target="_blank">http://192.168.25.4/</a>.</li>
+                    </ol>
+                    </p>
+                </div>
+            </div>
+            <div class="col col-sep">ó</div>
+            <div class="col">
+                <div class="workshop-requirement">
+                    <h2>2. Acceso a un servidor local</h2>
+                    <p>Para probar el código que vayamos escribiendo será necesario contar con una instalación local de WordPress, lo que usualmente involucra instalar y configurar un servidor web (Apache, NGINX, etc.), un servidor de base de datos MySQL o MariaDB y el módulo de PHP aplicable.</p>
+                    <p>Si bien este proceso puede realizarse manualmente, existen paquetes instalables como lo son <a href="http://ampps.com/download" target="_blank">AMPPS</a>, <a href="https://www.apachefriends.org/es/index.html" target="_blank">XAMPP</a> o <a href="https://www.mamp.info/en/downloads/" target="_blank">MAMP</a> que se encargan de todo por nosotros. En el caso particular de sistemas operativos basados en Linux, la instalación del software requerido puede hacerse mediante el <i>manejador de paquetes</i> de la distribución (por ejemplo, <a href="https://maslinux.es/como-instalar-lamp-y-wordpress-en-fedora-27/">en Fedora</a> o <a href="https://www.digitalocean.com/community/tutorials/como-instalar-linux-apache-mysql-php-lamp-en-ubuntu-16-04-es">en Ubuntu</a>).</p>
+                </div>
+
+                <div class="workshop-requirement">
+                    <h2>3. Una instalación de WordPress local</h2>
+                    <p>Una vez tengamos correctamente configurado nuestro servidor local, instalar WordPress es un proceso sencillo, que normalmente se limita a descargar y descomprimir la <a href="https://es.wordpress.org/download/" target="_blank">última versión de WordPress</a> en un directorio del servidor y dejar que WordPress se encargue del resto de la configuración e instalación.</p>
+                    <p>Algunos recursos útiles:
+                        <ul>
+                            <li><a href="https://codex.wordpress.org/Installing_WordPress" target="_blank">Installing WordPress</a> (disponible también en español)</li>
+                            <li><a href="https://codex.wordpress.org/Installing_WordPress_Locally_on_Your_Mac_With_MAMP" target="_blank">Installing WordPress with MAMP</a></li>
+                            <li><a href="https://miposicionamientoweb.es/como-instalar-wordpress-local/" target="_blank">Cómo instalar WordPress local</a></li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <p>Para cualquier duda que tengan antes del taller, estamos disponibles en <a href="mailto:hello@smilingrobots.com">hello at smilingrobots.com</a>.</p>
+    </body>
+</html>
